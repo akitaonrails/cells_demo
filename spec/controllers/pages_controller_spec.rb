@@ -6,11 +6,6 @@ describe PagesController do
   before(:all) do
     Factory(:homepage)
     Factory(:about)
-
-    # data for sidebar
-    Factory(:advertising)
-    Factory(:poll_with_question)
-    Factory(:link)
   end
 
   describe "GET 'index'" do

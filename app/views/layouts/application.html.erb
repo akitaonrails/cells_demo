@@ -18,19 +18,12 @@
         <h1>Demo Site</h1>
       </header>
       <sidebar>
-        <%= render :partial => "advertising" %>
-        <%= render :partial => "poll" %>
-        <%= render :partial => "links" %>
+        <%= render_cell :advertising, :display %>
+        <%= render_cell :poll, :display %>
+        <%= render_cell :links, :display %>
       </sidebar>
       <section id="content">
-        <div class="menu bubplastic horizontal gray">
-          <ul>
-            <%= page_menu("Homepage", "root", @page) %>
-            <%= page_menu("Ad Hoc", "adhoc", @page) %>
-            <%= page_menu("About Us", "about", @page) %>
-          </ul>
-          <br class="clearit" />
-        </div>
+        <%= render_cell :menu, :display, @page%>
 
         <% content_for :notice do %><p class="notice"><%= notice %></p><% end %>
         <% content_for :alert do %><p class="alert"><%= alert %></p><% end %>
