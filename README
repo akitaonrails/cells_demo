@@ -1,4 +1,17 @@
-== Rails 3 Application
+== Rails 3 Cells Demo Application
+
+This application has 2 branches, the master is where the cells implementation is, the "normal" branch is
+where the partials reference implementation is, you can easily change between the two like this:
+
+  git checkout normal
+  git checkout master
+
+For more information on Cells go to:
+
+  http://nicksda.apotomo.de
+  https://github.com/apotonick/cells
+
+== Requirements
 
 Install Ruby 1.8.7 or Ruby Enterprise Edition (http://www.rubyenterpriseedition.com).
 

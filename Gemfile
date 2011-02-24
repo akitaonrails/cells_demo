@@ -14,6 +14,7 @@ gem "compass"
 gem "lemonade"
 gem "cells"
 gem 'yajl-ruby', :require => 'yajl/json_gem'
+gem 'annotate'
 
 group :development do
   gem "watchr"

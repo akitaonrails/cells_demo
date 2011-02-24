@@ -1,0 +1,12 @@
+        <div id="poll" class="sidebar_box">
+          <h1><%= @poll.name %></h1>
+          <p><%= @poll.description %></p>
+          <%= form_for @poll, poll_path(@poll), :html => { :method => :put } do |f| %>
+          <ul>
+            <% for question in @poll.questions %>
+            <li><%= radio_button "question", "id", question.id %> <%= question.name %> (<%= question.votes %>)</li>
+            <% end %>
+          </ul>
+          <%= f.submit "Vote" %>
+          <% end %>
+        </div>

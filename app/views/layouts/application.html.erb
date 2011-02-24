@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xml:lang="en">
   <head>
-    <title>TITLE</title>
+    <title><%= @page ? @page.title : "No Page" %></title>
     <%= raw stylesheet_link_merged('screen', :media => 'screen, projection') %>
     <%= raw stylesheet_link_merged('simple_form', :media => 'screen, projection') %>
     <%= raw stylesheet_link_merged('print', :media => 'print') %>
+    <%= stylesheet_link_tag('menu_style') %>
     <!--[if lt IE 9]>
     <%= javascript_include_tag 'html5' %> 
     <%= raw stylesheet_link_merged('ie', :media => 'screen, projection') %>
@@ -13,14 +14,32 @@
   </head>
   <body>
     <div id="container">
-      <header>HEADER</header>
-      <sidebar>SIDEBAR</sidebar>
+      <header>
+        <h1>Demo Site</h1>
+      </header>
+      <sidebar>
+        <%= render :partial => "advertising" %>
+        <%= render :partial => "poll" %>
+        <%= render :partial => "links" %>
+      </sidebar>
       <section id="content">
+        <div class="menu bubplastic horizontal gray">
+          <ul>
+            <%= page_menu("Homepage", "root", @page) %>
+            <%= page_menu("Ad Hoc", "adhoc", @page) %>
+            <%= page_menu("About Us", "about", @page) %>
+          </ul>
+          <br class="clearit" />
+        </div>
+
         <% content_for :notice do %><p class="notice"><%= notice %></p><% end %>
         <% content_for :alert do %><p class="alert"><%= alert %></p><% end %>
         <%= yield %>
       </section>
-      <footer>FOOTER</footer>
+      <footer>
+        <hr />
+        Copyright 2011 (C) Fabio Akita
+      </footer>
     </div>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.min.js"></script>

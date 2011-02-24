@@ -1,0 +1,9 @@
+        <div id="advertising" class="sidebar_box">
+          <h1>Advertising</h1>
+          <% @advertising.impression! %>
+          <p><%= link_to image_tag(@advertising.image_url), advertising_path(@advertising), :method => :put %></p>
+          <ul class="status">
+            <li>Impressions: <%= @advertising.impressions %></li>
+            <li>Click Through: <%= @advertising.click_throughs %></li>
+          </ul>
+        </div>
