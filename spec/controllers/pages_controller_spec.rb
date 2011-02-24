@@ -3,9 +3,14 @@ require 'spec_helper'
 describe PagesController do
   render_views
 
-  before(:all) do
+  before(:each) do
     Factory(:homepage)
     Factory(:about)
+    ActionView::Base.class_eval do
+      def render_cell(name, state, *args, &block)
+        ""
+      end
+    end
   end
 
   describe "GET 'index'" do
