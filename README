@@ -1,0 +1,20 @@
+== Rails 3 Application
+
+Install Ruby 1.8.7 or Ruby Enterprise Edition (http://www.rubyenterpriseedition.com).
+
+To run tests open a Terminal and run:
+
+  spork
+
+Now open a new Terminal and run:
+
+  rake watchr
+
+If you want to run the entire Test Suite run:
+
+  rspec spec
+
+With Thin, instead of 'rails server', you can start the server like this:
+
+  thin start
+
